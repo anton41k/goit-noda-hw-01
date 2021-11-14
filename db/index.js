@@ -1,4 +1,18 @@
-const fs = require('fs').promises;
+const listContacts = require('./listContacts');
+const getContactById = require('./getContactById');
+const add = require('./add');
+const updateContacts = require('./updateContacts');
+const removeById = require('./removeById');
+
+module.exports = {
+    listContacts,
+    getContactById,
+    add,
+    removeById,
+    updateContacts
+}
+
+/*const fs = require('fs').promises;
 const path = require('path');
 const {nanoid} = require('nanoid');
 
@@ -68,11 +82,11 @@ async function addContact(name, email, phone) {
   } catch (error) {
     console.log(error);
   }
-}*/
+}
 addContact('Anton', 'anton@main.com', '123456789')
 module.exports = {
     listContacts,
     getContactById,
     removeContact,
     addContact,
-}
+}*/
