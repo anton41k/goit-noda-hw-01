@@ -11,7 +11,7 @@ program.parse(process.argv);
 
 const options = program.opts();
 
-const operations = require('./db');
+const operations = require('./controllers/contacts');
 
 async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
@@ -45,22 +45,7 @@ async function invokeAction({ action, id, name, email, phone }) {
       console.warn('\x1B[31m Unknown action type!');
   }
 }
-invokeAction(options)
 
-/*//contacts all
-//invokeAction({action: 'list'});
-
-//contact get by id
-const id = 5;
-//invokeAction({action: 'get', id});
-
-//add
-const newContact = {
-    name: 'Anton',
-    email: 'anton@mail.com',
-    phone: '036-258-78-96'
-}
-//invokeAction({action: 'add', data: newContact});
-
-//remove
-invokeAction({action: 'remove', id});*/
+(async()=>{
+    await invokeAction(options)
+})()
